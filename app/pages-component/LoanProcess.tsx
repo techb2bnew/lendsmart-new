@@ -4,6 +4,8 @@ type LoanProcessProps = {
     normalText?: string;  
     breakText?: string;
     description: string;
+    buttonText?: string;
+    buttonLink?: string;
 };
 const steps = [
   {
@@ -39,13 +41,20 @@ const steps = [
   },
 ];
 
-export default function LoanProcess({ highlightText, normalText, breakText, description }: LoanProcessProps) {
+export default function LoanProcess({
+  highlightText,
+  normalText,
+  breakText,
+  description,
+  buttonText,
+  buttonLink = "https://wa.me/61413208624",
+}: LoanProcessProps) {
   return (
-    <section className="bg-white pb-0 lg:pb-0 overflow-hidden px-2 lg:px-8">
+    <section className="overflow-hidden px-4 py-8 sm:py-10 lg:px-8 lg:py-12">
       <div className="max-w-[1440px] mx-auto">
         {/* heading */}
-        <div className="mx-auto max-w-[100%] text-center">
-          <h2 className="text-[28px] sm:text-[38px] lg:text-[48px] xl:text-[54px] font-extrabold leading-[1.08] tracking-[-0.02em] text-black">
+        <div className="mx-auto max-w-full text-center">
+          <h2 className="text-[28px] sm:text-[34px] lg:text-[44px] xl:text-[50px] font-extrabold leading-[1.08] tracking-[-0.02em] text-black">
             How Our <span className="text-[#7cc242]">Loan Process</span> Works
           </h2>
 
@@ -67,14 +76,14 @@ export default function LoanProcess({ highlightText, normalText, breakText, desc
             </svg>
           </div>
 
-          <div className="relative z-10 grid grid-cols-2 p-2 gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
+          <div className="relative z-10 grid grid-cols-1 p-2 gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
             {steps.map((step, index) => {
               const isActive = !!step.active;
               const moveUpCard = index === 1 || index === 3;
 
               return (
                 <div key={step.num} className={`relative flex justify-center ${moveUpCard ? "lg:top-[-30px]" : ""}`}>
-                  <div className={`relative flex min-h-[220px] w-full max-w-[200px] flex-col items-center px-4 pt-9 pb-6 text-center sm:min-h-[272px] sm:max-w-[212px] sm:px-8 sm:pt-10 sm:pb-7 ${isActive ? "bg-gradient-to-b from-[#509D1C] to-[#325918] text-white" : "bg-[#f3f3f3] text-black" }`} style={{ borderRadius: "999px",}}>
+                  <div className={`relative flex min-h-[220px] w-full max-w-[200px] flex-col items-center px-4 pt-9 pb-6 text-center sm:min-h-[272px] sm:max-w-[212px] sm:px-8 sm:pt-10 sm:pb-7 ${isActive ? "bg-linear-to-b from-[#509D1C] to-[#325918] text-white" : "bg-[#f3f3f3] text-black" }`} style={{ borderRadius: "999px",}}>
                     <div className="relative h-[56px] w-[56px]">
                       <Image src={step.icon} alt={step.title.replace("\n", " ")} width={56} height={56} priority quality={75} className={`object-contain ${isActive ? "brightness-0 invert" : ""}`}/>
                     </div>
@@ -83,7 +92,7 @@ export default function LoanProcess({ highlightText, normalText, breakText, desc
                       {step.num}. {step.title}
                     </h3>
 
-                    <p className={`mt-3 text-[14px] min-w-1 leading-[1.45] ${isActive ? "text-white/95" : "text-[#333]"}`}>
+                    <p className={`mt-3 text-[14px] min-w-1 leading-[1.45] pl-4 pr-4 ${isActive ? "text-white/95" : "text-[#333]"}`}>
                       {step.desc}
                     </p>
                   </div>
@@ -93,7 +102,21 @@ export default function LoanProcess({ highlightText, normalText, breakText, desc
           </div>
         </div>
 
-       
+        {buttonText && (
+          <div className="mt-8 flex justify-center">
+            <a
+              href={buttonLink}
+              target={buttonLink.startsWith("http") ? "_blank" : undefined}
+              rel={buttonLink.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="inline-flex h-[42px] items-center gap-2 rounded-[5px] bg-[#1f1f1f] px-4 text-[13px] font-medium text-white transition hover:opacity-95"
+            >
+              <span className="flex h-6 w-6 items-center justify-center rounded-[4px] bg-[#25D366]">
+                <Image src="/icon.png" alt="Whatsapp" width={16} height={16} className="object-contain" />
+              </span>
+              <span>{buttonText}</span>
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

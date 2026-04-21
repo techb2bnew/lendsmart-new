@@ -17,7 +17,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] items-start gap-10 lg:gap-6">
           {/* left content */}
           <div className="pt-6 lg:pt-10">
-           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-extrabold leading-normal md:leading-[1.08] tracking-[-0.02em] text-[#222222]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-extrabold leading-normal md:leading-[1.08] tracking-[-0.02em] text-[#222222]">
               Smart <span className="text-[#84c441]">Loan</span> Solutions for{" "}
               <span className="block">Your Financial Goals</span>
             </h1>

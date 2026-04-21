@@ -1,13 +1,25 @@
 import Image from "next/image";
-import { title } from "process";
 
 type LoanSupportProps = {
   highlightText?: string;
   normalText?: string;
   breakText?: string;
   description: string;
+  showActions?: boolean;
+  supportItems?: Array<{ icon: string; label: string }>;
+  bottomContent?: {
+    blueText: string;
+    greenText: string;
+    description: string;
+  };
+  chatButtonText?: string;
+  chatButtonLink?: string;
+  ctaButtonText?: string;
+  ctaButtonLink?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 };
-const supportItems = [
+const defaultSupportItems = [
   {
     icon: "/home.png",
     label: "Buying your first home",
@@ -26,17 +38,35 @@ const supportItems = [
   },
 ];
 
-export default function LoanSupport({ highlightText, normalText, breakText, description }: LoanSupportProps) {
+export default function LoanSupport({
+  highlightText,
+  normalText,
+  breakText,
+  description,
+  showActions = false,
+  supportItems = defaultSupportItems,
+  bottomContent = {
+    blueText: "Lend",
+    greenText: "Smart",
+    description: "Mortgages can help guide you through the financing process.",
+  },
+  chatButtonText = "Chat With Us",
+  chatButtonLink = "https://wa.me/61413208624",
+  ctaButtonText = "Get Loan Options",
+  ctaButtonLink = "tel:0413208624",
+  imageSrc = "/loan-supported.png",
+  imageAlt = "Loan support",
+}: LoanSupportProps) {
   return (
-    <section className="overflow-hidden bg-white py-14 lg:py-20">
-      <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
+    <section className="overflow-hidden px-4 py-8 sm:py-10 lg:px-10 lg:py-14">
+      <div className="max-w-[1440px] mx-auto">
         <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-[460px_1fr] lg:items-start lg:gap-8">
           {/* Left image */}
           <div className="relative z-10 flex justify-center lg:justify-start">
             <div className="relative h-[370px] w-full max-w-[360px] sm:h-[400px] sm:max-w-[400px] lg:h-[520px] lg:max-w-[430px]">
               <Image
-                src="/loan-supported.png"
-                alt="Loan support"
+                src={imageSrc}
+                alt={imageAlt}
                 width={700}
                 height={700}
                 quality={75}
@@ -47,7 +77,7 @@ export default function LoanSupport({ highlightText, normalText, breakText, desc
           </div>
 
           {/* Right content */}
-          <div className="relative lg:min-h-[520px]">
+          <div className="relative mt-4">
             <div className="relative z-20 lg:pl-2">
               <h2 className="text-[28px] font-extrabold lg:leading-[55px] tracking-[-0.02em] text-black sm:text-[36px] lg:text-[40px]">
                 {highlightText && (
@@ -100,10 +130,30 @@ export default function LoanSupport({ highlightText, normalText, breakText, desc
               </div>
 
               <p className="mt-6 max-w-[560px] text-[15px] leading-7 text-black lg:ml-[120px]">
-                <span className="font-bold text-[#1380d4]">Lend</span>
-                <span className="font-bold text-[#7cc242]">Smart</span>{" "}
-                Mortgages can help guide you through the financing process.
+                <span className="font-bold text-[#1380d4]">{bottomContent.blueText}</span>
+                <span className="font-bold text-[#7cc242]">{bottomContent.greenText}</span>{" "}
+                {bottomContent.description}
               </p>
+
+              {showActions && (
+                <div className="mt-5 flex flex-wrap items-center gap-3 lg:ml-[120px]">
+                  <a
+                    href={chatButtonLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-[6px] bg-[#1f1f1f] px-3 py-2 text-[12px] font-semibold text-white hover:opacity-90"
+                  >
+                    <Image src="/icon.png" alt="Whatsapp" width={18} height={18} />
+                    <span>{chatButtonText}</span>
+                  </a>
+                  <a
+                    href={ctaButtonLink}
+                    className="inline-flex items-center gap-2 rounded-[20px] border border-[#7cc242] px-4 py-2 text-[12px] font-semibold text-[#5f9735] hover:bg-[#7cc242] hover:text-white"
+                  >
+                    {ctaButtonText}
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>
