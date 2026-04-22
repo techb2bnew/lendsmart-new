@@ -187,7 +187,7 @@ export default function ConstructionLoansPage() {
             name: "Michael Anderson",
             time: "3 Days ago",
             image: "/user.png",
-          },
+          }, 
           {
             heading: "Flexible funding and excellent support",
             description:
