@@ -7,7 +7,12 @@ import type { LoanProcessStep } from "../pages-component/LoanProcess";
 import ServiceStatsBar from "../service/ServiceStatsBar";
 import Testimonials from "../pages-component/Testimonials";
 import PersonalLoanBenefits from "../service/PersonalLoanBenefits";
-
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Personal Loans Australia | Fast & Flexible Finance",
+  description:
+    "Get quick personal loans with flexible repayment options. LendSmart helps you fund your needs with fast approval and low interest rates.",
+};
 const personalUseItems = [
   { imageSrc: "/service/per-loan.png", title: "Travel and holidays", alt: "Travel and holidays" },
   { imageSrc: "/service/per-loan1.png", title: "Medical expenses", alt: "Medical expenses" },
@@ -146,7 +151,7 @@ export default function PersonalLoansPage() {
         description="Clients trust LendSmart Mortgages for reliable loan guidance and support."
         reviews={[
           {
-            heading: "Quick funds when I needed them the most",
+            heading: "",
             description:
               "I needed urgent funds for a personal expense, and the team made the entire process incredibly smooth. From checking my eligibility to getting approval, everything was fast and hassle-free.I received the funds quicker than I expected.",
             name: "Michael Anderson",
@@ -154,12 +159,12 @@ export default function PersonalLoansPage() {
             image: "/user.png",
           },
           {
-            heading: "Simple process with great support",
+            heading: "",
             description:
               "I was unsure about which personal loan to choose, but they guided me at every step. They compared multiple lenders and helped me get the best interest rate with flexible repayment options. Highly professional and easy to work with.",
-            name: "Michael Anderson",
+            name: "Jason K.",
             time: "3 Days ago",
-            image: "/user.png",
+            image: "/user-t.jpg",
           },
         ]}
       />

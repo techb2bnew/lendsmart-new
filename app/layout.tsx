@@ -22,10 +22,9 @@ const poppins = Poppins({
 
 
 export const metadata: Metadata = {
-  title: "LendSmart Mortgages | Finance Made Simple",
+  title: "LendSmart Mortgages | Smart Loan Solutions in Australia",
   description:
-    "LendSmart Mortgages helps individuals, families, and businesses access the right loan solutions with confidence. Smart loan solutions for your financial goals.",
-  keywords: "mortgage, home loan, personal loan, commercial loan, finance, LendSmart",
+    "Get fast, reliable loan solutions with LendSmart. Home, personal, business & car loans tailored to your needs. Apply today for quick approvals.",
 };
 
 export default function RootLayout({

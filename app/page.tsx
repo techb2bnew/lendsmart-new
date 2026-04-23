@@ -7,6 +7,12 @@ import LoanSupport from "./pages-component/LoanSupport";
 import Stats from "./pages-component/Stats";
 import Testimonials from "./pages-component/Testimonials";
 import WhyChoose from "./pages-component/WhyChoose";
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "LendSmart Mortgages | Smart Loan Solutions in Australia",
+  description:
+    "Get fast, reliable loan solutions with LendSmart. Home, personal, business & car loans tailored to your needs. Apply today for quick approvals.",
+};
 export default function Home() {
   return (
     <>
@@ -41,20 +47,28 @@ export default function Home() {
         description="Clients trust LendSmart Mortgages for reliable loan guidance and support."
         reviews={[
           {
-            heading: "Professional service and fast communication",
+            heading: "",
             description:
-              "Great advice and support throughout the loan application process. The team helped us understand our loan options clearly and made everything easier.",
+              "LendSmart made our home loan process incredibly easy. Everything was explained clearly, and we got approval faster than expected. Highly recommended!",
             name: "Michael Anderson",
             time: "3 Days ago",
             image: "/user.png",
           },
           {
-            heading: "Professional service and fast communication",
+            heading: "",
             description:
-              "Great advice and support throughout the loan application process. The team helped us understand our loan options clearly and made everything easier.",
-            name: "Michael Anderson",
+              "Professional, responsive, and genuinely helpful. We felt supported from application to settlement.",
+            name: "Jason K.",
             time: "3 Days ago",
-            image: "/user.png",
+            image: "/user-t.jpg",
+          },
+           {
+            heading: "",
+            description:
+              "Best mortgage experience we've ever had. Quick communication and great loan options.",
+            name: "Priya S.",
+            time: "3 Days ago",
+            image: "/girl.jpg",
           },
         ]}
       />

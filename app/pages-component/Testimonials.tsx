@@ -39,20 +39,20 @@ const testimonials = [
 
 export default function Testimonials({ title, description, reviews }: TestimonialsProps) {
   const [active, setActive] = useState(0);
+const visibleTestimonials = useMemo(() => {
+  if (!reviews || reviews.length === 0) return [];
+  const first = reviews[active];
+  const second = reviews[(active + 1) % reviews.length];
+  return [first, second];
+}, [active, reviews]);
 
-  const visibleTestimonials = useMemo(() => {
-    const first = testimonials[active];
-    const second = testimonials[(active + 1) % testimonials.length];
-    return [first, second];
-  }, [active]);
+const handlePrev = () => {
+  setActive((prev) => (prev === 0 ? (reviews?.length ?? 1) - 1 : prev - 1));
+};
 
-  const handlePrev = () => {
-    setActive((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setActive((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-  };
+const handleNext = () => {
+  setActive((prev) => (prev === (reviews?.length ?? 1) - 1 ? 0 : prev + 1));
+};
 
   return (
     <section
@@ -80,7 +80,7 @@ export default function Testimonials({ title, description, reviews }: Testimonia
 
             {/* Cards overlapped on image */}
             <div className="relative z-40 mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-10 lg:-mr-12 xl:-mr-[230px]">
-              {reviews?.map((item, index) => (
+              {visibleTestimonials?.map((item, index) => (
                 <div
                   key={`${item.name}-${index}-${active}`}
                   className={`group rounded-[14px] border p-6 transition-all duration-300 ${
@@ -97,7 +97,7 @@ export default function Testimonials({ title, description, reviews }: Testimonia
                     {item.heading}
                   </h3>
 
-                  <div className="mt-4 min-h-[88px] space-y-2 text-center text-[13px] italic leading-5 text-[#ececec]">
+                  <div className="mt-4 min-h-[88px] space-y-2 text-center text-[16px] italic leading-5 text-[#ececec]">
                     {item.description.split("\n").map((line, i) => (
                       <p key={i}>{line}</p>
                     ))}

@@ -7,7 +7,12 @@ import LoanProcess from "../pages-component/LoanProcess";
 import type { LoanProcessStep } from "../pages-component/LoanProcess";
 import ServiceStatsBar from "../service/ServiceStatsBar";
 import Testimonials from "../pages-component/Testimonials";
-
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Asset Finance Australia | Equipment & Business Loans",
+  description:
+    "Upgrade your business with asset finance solutions. Get funding for equipment, machinery & tools with LendSmart’s flexible plans.",
+};
 const assetFinanceOptions = [
   {
     id: "expert-guidance",
@@ -180,7 +185,7 @@ export default function AssetFinancePage() {
         description="Clients trust LendSmart Mortgages for reliable loan guidance and support."
         reviews={[
           {
-            heading: "Seamless asset finance with great support",
+            heading: "",
             description:
               "We needed financing for new equipment, and the team made the entire process simple and efficient. They understood our business needs and secured a solution with flexible terms and competitive rates. It helped us upgrade our assets without impacting cash flow.",
             name: "Michael Anderson",
@@ -188,12 +193,12 @@ export default function AssetFinancePage() {
             image: "/user.png",
           },
           {
-            heading: "Fast approvals and smart financing solutions",
+            heading: "",
             description:
               "Financing our business assets was crucial for growth, and they handled everything professionally. From comparing lenders to final approval, the process was quick, clear, and hassle-free. Highly recommended for any business looking to invest in assets with confidence.",
-            name: "Michael Anderson",
+            name: "Jason K.",
             time: "3 Days ago",
-            image: "/user.png",
+            image: "/user-t.jpg",
           },
         ]}
       />

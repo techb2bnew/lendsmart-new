@@ -7,7 +7,12 @@ import LoanProcess from "../pages-component/LoanProcess";
 import type { LoanProcessStep } from "../pages-component/LoanProcess";
 import ServiceStatsBar from "../service/ServiceStatsBar";
 import Testimonials from "../pages-component/Testimonials";
-
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Construction Loans Australia | Build with Confidence",
+  description:
+    "Build your dream property with flexible construction loans. LendSmart provides staged funding and expert support from start to finish.",
+};
 const constructionOptions = [
   {
     id: "fund-released",
@@ -181,7 +186,7 @@ export default function ConstructionLoansPage() {
         description="Clients trust LendSmart Mortgages for reliable loan guidance and support."
         reviews={[
           {
-            heading: "Smooth construction funding from start to finish",
+            heading: "",
             description:
               "Building our home was a big project, but the team made the construction loan process simple and stress-free. They guided us through every stage and arranged funding with flexible drawdown options. Everything stayed on track without any delays.",
             name: "Michael Anderson",
@@ -189,12 +194,12 @@ export default function ConstructionLoansPage() {
             image: "/user.png",
           }, 
           {
-            heading: "Flexible funding and excellent support",
+            heading: "",
             description:
               "We needed a construction loan with staged payments, and they delivered exactly what we were looking for. From lender comparison to final approval, the entire process was handled professionally. Highly recommended for anyone planning a construction project.",
-            name: "Michael Anderson",
+            name: "Jason K.",
             time: "3 Days ago",
-            image: "/user.png",
+            image: "/user-t.jpg",
           },
         ]}
       />

@@ -3,7 +3,12 @@ import ContactFormMapSection from "../pages-component/ContactFormMapSection";
 import MainSection from "../pages-component/MainSection";
 import SpeakWithExpertSection from "../pages-component/SpeakWithExpertSection";
 import Testimonials from "../pages-component/Testimonials";
-
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Contact LendSmart | Speak to Loan Experts",
+  description:
+    "Need help with loans? Contact LendSmart today and speak with our experts for quick support, guidance, and personalized loan solutions.",
+};
 export default function ContactPage() {
   return (
     <>
@@ -32,7 +37,7 @@ export default function ContactPage() {
         description="Clients trust LendSmart Mortgages for reliable loan guidance and support."
         reviews={[
           {
-            heading: "Professional service and fast communication",
+            heading: "",
             description:
               "Great advice and support throughout the loan application process. The team helped us understand our loan options clearly and made everything easier.",
             name: "Michael Anderson",
@@ -40,12 +45,12 @@ export default function ContactPage() {
             image: "/user.png",
           },
           {
-            heading: "Professional service and fast communication",
+            heading: "",
             description:
               "Great advice and support throughout the loan application process. The team helped us understand our loan options clearly and made everything easier.",
-            name: "Michael Anderson",
+            name: "Jason K.",
             time: "3 Days ago",
-            image: "/user.png",
+            image: "/user-t.jpg",
           },
         ]}
       />

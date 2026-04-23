@@ -6,7 +6,12 @@ import AboutService from "../service/AboutService";
 import HelpSection from "../service/HelpSection";
 import ServiceStatsBar from "../service/ServiceStatsBar";
 import Link from "next/link";
-
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Home Loans in Australia | LendSmart Mortgages",
+  description:
+    "Looking for a home loan? Get competitive rates, flexible options & expert guidance with LendSmart. Start your home buying journey today.",
+};
 const helpItems = [
   { imageSrc: "/service/help.png", title: "First home buyer loans", alt: "First home buyer loans" },
   { imageSrc: "/service/help2.png", title: "Debt consolidation loans", alt: "Debt consolidation loans" },
@@ -147,7 +152,7 @@ export default function ResidentialLoansPage() {
         description="Clients trust LendSmart Mortgages for reliable loan guidance and support."
         reviews={[
           {
-            heading: "Professional service and smooth home buying experience",
+            heading: "",
             description:
               "Buying our first home felt overwhelming, but the team guided us through every step of the home loan process. They explained all our options clearly and helped us secure a great interest rate.",
             name: "Michael Anderson",
@@ -155,12 +160,12 @@ export default function ResidentialLoansPage() {
             image: "/user.png",
           },
           {
-            heading: "Fast approval and excellent support",
+            heading: "",
             description:
             "We were worried about getting our home loan approved on time, but the team made it happen quicker than expected. They handled everything from lender comparison to documentation with complete professionalism.",
-            name: "Michael Anderson",
+            name: "Jason K.",
             time: "3 Days ago",
-            image: "/user.png",
+            image: "/user-t.jpg",
           },
         ]}
       />

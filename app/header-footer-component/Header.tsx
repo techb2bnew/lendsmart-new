@@ -6,29 +6,52 @@ import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/residential-loans" },
   { label: "About Us", href: "/about-us" },
   { label: "Contact Us", href: "/contact" },
+];
+
+const services = [
+  { label: "Residential Home Loans", href: "/residential-loans" },
+  { label: "Commercial Loans", href: "/commercial-loans" },
+  { label: "Personal Loans", href: "/personal-loans" },
+  { label: "Car & Truck Loans", href: "/car-truck-loans" },
+  { label: "Asset Finance", href: "/asset-finance" },
+  { label: "Construction Loans", href: "/construction-loans" },
 ];
 
 export default function LendSmartHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [serviceOpen, setServiceOpen] = useState(false);
 
- 
-  // Modern Menu Icon - Better Design
-  const Menu = ((
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3 12H21M3 6H21M3 18H21" stroke="black" strokeWidth="2" strokeLinecap="round"/>
+  // Arrow Icon
+  const Arrow = ({ open }: { open: boolean }) => (
+    <svg
+      className={`w-4 h-4 ml-1 transition-transform duration-300 ${open ? "rotate-180" : "rotate-0"}`}
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        d="M6 9L12 15L18 9"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
-  ));
+  );
 
-  // Modern Close Icon - Better Design
-  const X = ((
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6 18L18 6M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+  const Menu = (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path d="M3 12H21M3 6H21M3 18H21" stroke="black" strokeWidth="2" strokeLinecap="round" />
     </svg>
-  ));
+  );
+
+  const X = (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path d="M6 18L18 6M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +61,7 @@ export default function LendSmartHeader() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(()=> {
+  useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
@@ -48,76 +71,96 @@ export default function LendSmartHeader() {
   return (
     <header className="w-full overflow-visible">
       <div className={`bg-white transition-all duration-300 ${isSticky ? "fixed top-0 left-0 w-full z-50 shadow-lg" : "relative"}`}>
-        <div className="bg-[#F4F4F4] border-y border-gray-300 px-4 lg:px-5">
-          <div className="max-w-[1440px] mx-auto relative flex min-h-[70px] items-center justify-between py-2">
-            {/* Logo */}
-          
-              <Link href="/" onClick={() => setMobileOpen(false)}>
-                  <Image src="/LendSmart-Mortgages-Logo- 2.png" alt="LendSmart Mortgages" width={200} height={70} className="" priority />
-              </Link>
-        
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center justify-center flex-1 gap-8 text-[14px] font-normal text-black">
-              {navLinks.map((item) => (
-                <Link key={item.label} href={item.href} className="hover:text-[#1380d4] transition-colors">
-                  {item.label}
-                </Link>
-              ))}
+        {/* TOP */}
+        <div className="bg-[#F4F4F4] border-y border-gray-300 px-4 lg:px-5">
+          <div className="max-w-[1440px] mx-auto flex items-center justify-between py-2">
+
+            {/* Logo */}
+            <Link href="/" onClick={() => setMobileOpen(false)}>
+              <Image src="/LendSmart-Mortgages-Logo- 2.png" alt="logo" width={200} height={70} priority />
+            </Link>
+
+            {/* DESKTOP NAV */}
+            <nav className="hidden md:flex items-center flex-1 justify-center gap-8 text-[14px]">
+
+              <Link href="/" className="hover:text-[#1380d4]">Home</Link>
+
+              {/* SERVICES */}
+              <div className="relative group flex items-center cursor-pointer">
+                <span className="flex items-center hover:text-[#1380d4]">
+                  Services
+                  <Arrow open={false} />
+                </span>
+
+                <div className="absolute left-0 top-full mt-2 w-[260px] bg-[#f4f4f4] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                  {services.map((service) => (
+                    <Link
+                      key={service.label}
+                      href={service.href}
+                      className="block px-4 py-3 text-[14px] hover:bg-[#e5e5e5]"
+                    >
+                      {service.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <Link href="/about-us" className="hover:text-[#1380d4]">About Us</Link>
+              <Link href="/contact" className="hover:text-[#1380d4]">Contact Us</Link>
+
             </nav>
 
-            {/* Desktop WhatsApp Button */}
-            <div className="absolute right-0 hidden md:block lg:right-1">
-              <a href="https://wa.me/61413208624" target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-lg bg-[#3f7416] hover:bg-[#0781c3] px-4 py-2 text-[13px] font-medium text-white shadow-md transition-all duration-300  hover:shadow-lg active:scale-95">
-                <span className="flex h-7 w-7 items-center justify-center rounded-md bg-[#25D366] text-white">
-                  <Image src="/icon.png" alt="" width={30} height={30} className="object-contain" />
-                </span>
-                <span className="hidden lg:inline">Chat With Us</span>
-                <span className="lg:hidden">Chat</span>
-              </a>
-            </div>
-
-            {/* Mobile Menu Button - Improved */}
-            <button
-              type="button"
-              className=" z-30 flex h-12 w-12 items-center justify-end rounded-full text-black bg-white/10 backdrop-blur-sm border border-white/20 md:hidden transition-all active:scale-95"
-              aria-expanded={mobileOpen}
-              onClick={() => setMobileOpen(!mobileOpen)}
-            >
+            {/* MOBILE BTN */}
+            <button className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
               {mobileOpen ? X : Menu}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation Menu - Smooth */}
-        <div className={`md:hidden fixed inset-0 z-[100] transition-all duration-300 ${mobileOpen ? "visible opacity-100" : "invisible opacity-0 pointer-events-none"}`}>
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
-          <nav className={`absolute top-0 right-0 h-full w-[280px] bg-[#2d5010] shadow-2xl transform transition-transform duration-300 ease-out ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
-            <div className="flex justify-end p-4">
-              <button onClick={() => setMobileOpen(false)} className="p-2 text-white">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M6 18L18 6M6 6L18 18" strokeLinecap="round"/>
-                </svg>
-              </button>
+        {/* MOBILE MENU */}
+        <div className={`md:hidden fixed inset-0 z-[100] ${mobileOpen ? "visible" : "invisible"}`}>
+          <div className="absolute inset-0 bg-black/60" onClick={() => setMobileOpen(false)} />
+
+          <nav className={`absolute right-0 top-0 h-full w-[280px] bg-[#2d5010] p-5 transition-transform ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
+
+            <div className="flex justify-end mb-4">
+              <button onClick={() => setMobileOpen(false)}>{X}</button>
             </div>
-            <ul className="flex flex-col px-6 py-4 gap-2">
-              {navLinks.map((item) => (
-                <li key={item.label}>
-                  <Link href={item.href} className="block py-3 text-[16px] font-medium text-white border-b border-white/10 hover:pl-2 transition-all"
-                    onClick={() => setMobileOpen(false)}>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-              <li className="pt-4">
-                <a href="https://wa.me/61413208624" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-lg bg-white py-3 text-[14px] font-semibold text-[#222]"
-                  onClick={() => setMobileOpen(false)}>
-                  <Image src="/icon.png" alt="" width={24} height={24} className="object-contain" />
-                  WhatsApp chat
-                </a>
+
+            <ul className="flex flex-col gap-3 text-white">
+
+              <Link href="/" onClick={() => setMobileOpen(false)}>Home</Link>
+
+              {/* MOBILE SERVICES */}
+              <li>
+                <button
+                  onClick={() => setServiceOpen(!serviceOpen)}
+                  className="flex items-center justify-between w-full"
+                >
+                  Services
+                  <Arrow open={serviceOpen} />
+                </button>
+
+                {serviceOpen && (
+                  <div className="pl-4 mt-2">
+                    {services.map((service) => (
+                      <Link
+                        key={service.label}
+                        href={service.href}
+                        className="block py-2 text-sm text-white/80"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {service.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </li>
+
+              <Link href="/about-us" onClick={() => setMobileOpen(false)}>About Us</Link>
+              <Link href="/contact" onClick={() => setMobileOpen(false)}>Contact Us</Link>
+
             </ul>
           </nav>
         </div>

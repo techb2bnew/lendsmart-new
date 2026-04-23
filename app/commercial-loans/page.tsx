@@ -8,7 +8,12 @@ import type { LoanProcessStep } from "../pages-component/LoanProcess";
 import ServiceStatsBar from "../service/ServiceStatsBar";
 import Testimonials from "../pages-component/Testimonials";
 import HowWeCanHelpYou from "../service/HowWeCanHelpYou";
-
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Commercial Loans Australia | Business Finance",
+  description:
+    "Grow your business with flexible commercial loans. LendSmart offers tailored financing solutions for expansion, cash flow & investments.",
+};
 const helpItems = [
   {
     icon: "/service/c-icon.png",
@@ -214,20 +219,20 @@ export default function CommercialLoansPage() {
         description="Clients trust LendSmart Mortgages for reliable loan guidance and support."
         reviews={[
           {
-            heading: "Reliable funding partner for business growth",
+            heading: "",
             description:
-              "We needed funding to expand our operations, and the team made the entire commercial finance process seamless.  They understood our business needs and secured a solution with competitive rates and flexible terms.",
+              "We needed funding to expand our operations, and the team made the entire commercial finance process seamless. They understood our business needs and secured a solution with competitive rates and flexible terms.",
             name: "Michael Anderson",
             time: "3 Days ago",
             image: "/user.png",
           },
           {
-            heading: "Fast approvals and expert financial guidance",
+            heading: "",
             description:
-              "Getting the right business loan was critical for our cash flow, and they delivered beyond expectations.  From lender comparison to final approval, everything was handled professionally and efficiently.",
-            name: "Michael Anderson",
+              "Getting the right business loan was critical for our cash flow, and they delivered beyond expectations. From lender comparison to final approval, everything was handled professionally and efficiently.",
+            name: "Jason K.",
             time: "3 Days ago",
-            image: "/user.png",
+            image: "/user-t.jpg",
           },
         ]}
       />

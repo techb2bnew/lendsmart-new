@@ -21,8 +21,8 @@ const services = [
   { label: "Construction Loans", href: "/construction-loans" },
 ];
 const company = [
-  { label: "Terms & Condition", href: "#" },
-  { label: "Privacy Policy", href: "#" }, 
+  { label: "Terms & Condition", href: "/terms-conditions" },
+  { label: "Privacy Policy", href: "/privacy-policy" }, 
 ];
 
 const accordionIds = {
@@ -239,7 +239,9 @@ export default function Footer() {
 
           {/* Bottom row */}
           <div className="flex flex-col gap-3 pt-6 text-[14px] text-[#555] lg:flex-row lg:items-center lg:justify-between">
-            <p>©2026 All Rights Reserved | LendSmartmortgages | Privacy Policy</p>
+            <p>©2026 All Rights Reserved | LendSmartmortgages | <a href="/privacy-policy" className="transition hover:text-[#1380d4]">
+              Privacy Policy
+            </a></p>
           </div>
         </div>
       </div>

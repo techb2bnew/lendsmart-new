@@ -76,7 +76,7 @@ const Annocementbar = () => {
             </div>
             <div className="hidden items-center gap-2 px-4 lg:flex lg:px-5">
               {ClockIcon}
-              <span>Mon - Sun : 9am - 8pm</span>
+              <span>Mon - Sun : 9:30am to 4:30pm</span>
             </div>
             <div className="hidden items-center gap-2 pl-4 lg:flex lg:pl-5">
               {CallIcon}

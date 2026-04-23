@@ -7,7 +7,12 @@ import LoanProcess from "../pages-component/LoanProcess";
 import type { LoanProcessStep } from "../pages-component/LoanProcess";
 import ServiceStatsBar from "../service/ServiceStatsBar";
 import Testimonials from "../pages-component/Testimonials";
-
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Car & Truck Loans Australia | Easy Vehicle Finance",
+  description:
+    "Finance your car or truck with ease. LendSmart offers low-rate vehicle loans with quick approvals and flexible repayment options.",
+};
 const financeOptions = [
   {
     id: "car-loans",
@@ -172,7 +177,7 @@ export default function CarTruckLoansPage() {
         description="Clients trust LendSmart Mortgages for reliable loan guidance and support."
         reviews={[
           {
-            heading: "Smooth process from application to driving",
+            heading: "",
             description:
               "Buying my car was a big decision, but the team made the financing process incredibly easy. They helped me compare lenders and secure a great deal with flexible repayment options. I was able to drive away sooner than expected!",
             name: "Michael Anderson",
@@ -180,12 +185,12 @@ export default function CarTruckLoansPage() {
             image: "/user.png",
           },
           {
-            heading: "Fast approval and hassle-free experience",
+            heading: "",
             description:
               "I needed quick vehicle finance for my business, and they delivered exactly what I was looking for. The approval was fast, documentation was simple, and the entire process was stress-free. Highly recommend their services!",
-            name: "Michael Anderson",
+            name: "Jason K.",
             time: "3 Days ago",
-            image: "/user.png",
+            image: "/user-t.jpg",
           }, 
         ]}
       />

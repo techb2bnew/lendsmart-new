@@ -7,7 +7,12 @@ import LoanSupport from "../pages-component/LoanSupport";
 import LoanProcess from "../pages-component/LoanProcess";
 import Testimonials from "../pages-component/Testimonials";
 import WhyChoose from "../pages-component/WhyChoose";
-
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "About LendSmart | Trusted Mortgage Experts",
+  description:
+    "Learn about LendSmart mission to simplify lending. We help individuals & businesses secure the right loans with expert financial guidance.",
+};
 export default function AboutUsPage() {
   return (
     <>
@@ -125,18 +130,18 @@ export default function AboutUsPage() {
         description="Clients trust LendSmart Mortgages for reliable loan guidance and support."
         reviews={[
           {
-            heading: "Professional service and trusted guidance",
+            heading: "",
             description:"From the very first interaction, the team was professional, responsive, and genuinely helpful. They took the time to understand our needs and provided clear, honest advice throughout the process. It is rare to find such reliable and client-focused service.",
             name: "Michael Anderson",
             time: "3 Days ago",
             image: "/user.png",
           },
           {
-            heading: "A team you can rely on",
+            heading: "",
             description:"We had a great experience working with them. Their communication was excellent, and they made everything simple to understand. The entire process was smooth, transparent, and well-managed from start to finish.",
-            name: "Michael Anderson",
+            name: "Jason K.",
             time: "3 Days ago",
-            image: "/user.png",
+            image: "/user-t.jpg",
           },
         ]}
       />
