@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
         <div className="space-y-8 text-gray-600 whitespace-pre-line">
 
           <p>
-In handling your personal information, Thrifty Home Loans is committed to complying with the Privacy Act 1988 and the Australian Privacy Principles.
+            In handling your personal information, Thrifty Home Loans is committed to complying with the Privacy Act 1988 and the Australian Privacy Principles.
           </p>
 
           <div>
@@ -27,11 +27,16 @@ In handling your personal information, Thrifty Home Loans is committed to comply
               How and why we collect your personal information
             </h2>
             <p>
-We collect personal information from you when you apply for or use our products and services. In particular, we collect it so we can:
-
-• provide you with the products and services you require, which may include financial and insurance products and services; and
-• provide you with information about products and services available to you from Thrifty Home Loans and associated businesses.
+              We collect personal information from you when you apply for or use our products and services. In particular, we collect it so we can:
             </p>
+            <ul className="list-disc pl-6 mt-2 space-y-1">
+              <li>
+                provide you with the products and services you require, which may include financial and insurance products and services; and
+              </li>
+              <li>
+                provide you with information about products and services available to you from Thrifty Home Loans and associated businesses.
+              </li>
+            </ul>
           </div>
 
           <div>
@@ -39,11 +44,11 @@ We collect personal information from you when you apply for or use our products 
               Providing Your Personal Information to Other Organisations
             </h2>
             <p>
-In providing products and services to you it may be necessary for us to provide your personal information to other organisations with which we conduct business. This includes outsource financial pty ltd (ACN 131 090 705) which is our mortgage aggregator.
+              In providing products and services to you it may be necessary for us to provide your personal information to other organisations with which we conduct business. This includes outsource financial pty ltd (ACN 131 090 705) which is our mortgage aggregator.
 
-Other such organisations include related entities, mortgage managers, lenders, solicitors and legal advisers, accountants and auditors, printers and mailing services, insurers, collection agents, conveyancers and government agencies which regulate our products and services.
+              Other such organisations include related entities, mortgage managers, lenders, solicitors and legal advisers, accountants and auditors, printers and mailing services, insurers, collection agents, conveyancers and government agencies which regulate our products and services.
 
-Your personal information is only provided to those entities to the extent necessary to enable us to provide our products and services to you.
+              Your personal information is only provided to those entities to the extent necessary to enable us to provide our products and services to you.
             </p>
           </div>
 
@@ -52,7 +57,7 @@ Your personal information is only provided to those entities to the extent neces
               If your personal information is not provided
             </h2>
             <p>
-In order to provide products and services to you and to assist you in applying for a home loan and related products and securities, we require information about you. If you do not provide us with all of the information we request, we may be unable to supply to you the product or service that you require.
+              In order to provide products and services to you and to assist you in applying for a home loan and related products and securities, we require information about you. If you do not provide us with all of the information we request, we may be unable to supply to you the product or service that you require.
             </p>
           </div>
 
@@ -61,9 +66,9 @@ In order to provide products and services to you and to assist you in applying f
               Your rights
             </h2>
             <p>
-The Privacy Act gives you rights to access the personal information we hold about you, and you can ask us to correct the information if it is inaccurate.
+              The Privacy Act gives you rights to access the personal information we hold about you, and you can ask us to correct the information if it is inaccurate.
 
-You can gain access to the information we hold about you by contacting us at 0413206624 or outsource financial Pty Ltd on 1300 781 481.
+              You can gain access to the information we hold about you by contacting us at 0413206624 or outsource financial Pty Ltd on 1300 781 481.
             </p>
           </div>
 
@@ -72,9 +77,9 @@ You can gain access to the information we hold about you by contacting us at 041
               Consent to provide your personal information to a credit reporting body (CRB)
             </h2>
             <p>
-If you consent to us doing so, we may obtain a report or information about your consumer or commercial credit worthiness from a CRB. We may disclose personal information such as your name, date of birth, drivers licence and address to the CRB to obtain an assessment of whether that personal information matches the information held by it.
+              If you consent to us doing so, we may obtain a report or information about your consumer or commercial credit worthiness from a CRB. We may disclose personal information such as your name, date of birth, drivers licence and address to the CRB to obtain an assessment of whether that personal information matches the information held by it.
 
-By signing this document below, I/we appoint Thrifty Home Loans as our agent to obtain a credit report on my/our behalf.
+              By signing this document below, I/we appoint Thrifty Home Loans as our agent to obtain a credit report on my/our behalf.
             </p>
           </div>
 
@@ -83,13 +88,17 @@ By signing this document below, I/we appoint Thrifty Home Loans as our agent to 
               Electronic Communications Consent
             </h2>
             <p>
-By providing your email address, you consent to receiving notices and other documents from us by email to the email address provided, and you understand that if you give this consent:
+              By providing your email address, you consent to receiving notices and other documents from us by email to the email address provided, and you understand that if you give this consent:
+            </p>
 
-• we may no longer send you paper copies of notices and other documents.
-• you should regularly check your email address for documents; and
-• you may withdraw your consent to receiving documents by email at any time.
+            <ul className="list-disc pl-6 mt-2 space-y-1">
+              <li>we may no longer send you paper copies of notices and other documents.</li>
+              <li>you should regularly check your email address for documents; and</li>
+              <li>you may withdraw your consent to receiving documents by email at any time.</li>
+            </ul>
+            <p>
 
-You also confirm that you have the facilities to print or store any notice or document that we send you by email, if desired.
+              You also confirm that you have the facilities to print or store any notice or document that we send you by email, if desired.
             </p>
           </div>
 
@@ -98,13 +107,13 @@ You also confirm that you have the facilities to print or store any notice or do
               Marketing Information
             </h2>
             <p>
-If you consent to us doing so, we may provide you with information from time to time about new products and services available to you from or other businesses with whom we have a relationship. Your consent to our providing this information to you will be implied unless you notify us that you do not wish to receive this information.
+              If you consent to us doing so, we may provide you with information from time to time about new products and services available to you from or other businesses with whom we have a relationship. Your consent to our providing this information to you will be implied unless you notify us that you do not wish to receive this information.
 
-By signing this document below, I/we consent to receive marketing information.
+              By signing this document below, I/we consent to receive marketing information.
 
-You agree that we may collect, use, and disclose your information as specified above.
+              You agree that we may collect, use, and disclose your information as specified above.
             </p>
-          </div> 
+          </div>
 
         </div>
       </div>
